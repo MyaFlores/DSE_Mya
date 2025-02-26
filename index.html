@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Áreas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Áreas</h1>
+    <button onclick="calcularCirculo()">Área del Círculo</button>
+    <button onclick="calcularRectangulo()">Área del Rectángulo</button>
+    <button onclick="calcularTriangulo()">Área del Triángulo</button>
+    <button onclick="calcularHexagono()">Área del Hexágono</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularCirculo() {
+            let radio = parseFloat(prompt("Ingrese el radio del círculo:"));
+            if (!isNaN(radio) && radio > 0) {
+                let area = Math.PI * Math.pow(radio, 2);
+                document.getElementById("resultado").innerText = `Área del círculo: ${area.toFixed(2)}`;
+            } else {
+                alert("Ingrese un valor válido");
+            }
+        }
+
+        function calcularRectangulo() {
+            let base = parseFloat(prompt("Ingrese la base del rectángulo:"));
+            let altura = parseFloat(prompt("Ingrese la altura del rectángulo:"));
+            if (!isNaN(base) && base > 0 && !isNaN(altura) && altura > 0) {
+                let area = base * altura;
+                document.getElementById("resultado").innerText = `Área del rectángulo: ${area.toFixed(2)}`;
+            } else {
+                alert("Ingrese valores válidos");
+            }
+        }
+
+        function calcularTriangulo() {
+            let base = parseFloat(prompt("Ingrese la base del triángulo:"));
+            let altura = parseFloat(prompt("Ingrese la altura del triángulo:"));
+            if (!isNaN(base) && base > 0 && !isNaN(altura) && altura > 0) {
+                let area = (base * altura) / 2;
+                document.getElementById("resultado").innerText = `Área del triángulo: ${area.toFixed(2)}`;
+            } else {
+                alert("Ingrese valores válidos");
+            }
+        }
+
+        function calcularHexagono() {
+            let lado = parseFloat(prompt("Ingrese el lado del hexágono:"));
+            if (!isNaN(lado) && lado > 0) {
+                let area = (3 * Math.sqrt(3) * Math.pow(lado, 2)) / 2;
+                document.getElementById("resultado").innerText = `Área del hexágono: ${area.toFixed(2)}`;
+            } else {
+                alert("Ingrese un valor válido");
+            }
+        }
+    </script>
+</body>
+</html>
