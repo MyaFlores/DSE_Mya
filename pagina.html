@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formulario </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6e8fc2;
+        }
+        .container {
+            background: #8eb2e8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        select {
+            width: 100%;
+            height: 100px;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Pedido de cafe </h2>
+        <label for="listBox">Selecciona una opcion:</label>
+        <br>
+        <select id="listBox" multiple>
+            <option value="opcion1"> Frappe </option>
+            <option value="opcion2"> Americano </option>
+            <option value="opcion3"> Capuchino </option>
+            <option value="opcion4"> Moka </option>
+            <option value="opcion5"> Espresso </option>
+        </select>
+        <br>
+        <label for="datePicker">Selecciona una fecha y hora:</label>
+        <input type="datetime-local" id="datePicker">
+        
+        <button onclick="mostrarSeleccion()">Enviar</button>
+        
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function mostrarSeleccion() {
+            const listBox = document.getElementById("listBox");
+            const selectedOptions = Array.from(listBox.selectedOptions).map(option => option.text);
+            const datePicker = document.getElementById("datePicker").value;
+            
+            document.getElementById("resultado").innerText = `Opcion seleccionada: ${selectedOptions.join(", ")}\nFecha seleccionada: ${datePicker}`;
+        }
+    </script>
+</body>
+</html>
