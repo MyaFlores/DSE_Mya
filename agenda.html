@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contactos</title>
+    <link rel="stylesheet" href="agenda.css">
+    <script defer src="agenda.js"></script>
+
+</head>
+<body>
+    <h1> Agenda de Contactos</h1>
+    
+    <div class="form-container">
+        <div id="success-message" class="success-message"></div>
+        
+        <form id="contact-form">
+            <input type="hidden" id="contact-id">
+            
+            <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name">
+                <div id="name-error" class="error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="text" id="phone">
+                <div id="phone-error" class="error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="text" id="email">
+                <div id="email-error" class="error"></div>
+            </div>
+            
+            <button type="submit" id="submit-btn">Agregar Contacto</button>
+            <button type="button" id="cancel-btn" style="display: none; background-color: #95a5a6;">Cancelar</button>
+        </form>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar contactos por nombre o correo..." style="width: 100%; padding: 10px;">
+    </div>
+    
+    <div class="contacts-container">
+        <h2> Lista de Contactos</h2>
+        
+        <table id="contacts-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="contacts-list">
+                <!-- Los contactos se agregarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    
