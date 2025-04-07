@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Principal</title>
+    <link rel="stylesheet" href="/contenedor.css">
+    <script defer src="/contenedor.js"></script>
+</head>
+<body>
+    <div class="panel">
+        <h1>Formulario Principal</h1>
+        
+        <div class="tab-control">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'tab1')">Información Personal</button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')">Preferencias</button>
+            </div>
+            
+            <div id="tab1" class="tab-content active">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Ingresa tu correo electrónico">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" placeholder="Ingresa tu número de teléfono">
+                </div>
+                
+                <button type="button">Guardar</button>
+                <button type="button">Cancelar</button>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+                <div class="form-group">
+                    <label for="intereses">Intereses:</label>
+                    <input type="text" id="intereses" placeholder="Tus intereses o hobbies">
+                </div>
+                
+                <div class="form-group">
+                    <label for="notificaciones">Recibir notificaciones:</label>
+                    <div>
+                        <input type="checkbox" id="notificaciones">
+                        <label for="notificaciones" style="display: inline; font-weight: normal;">Acepto recibir notificaciones por email</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" rows="4" placeholder="Escribe tus comentarios aquí"></textarea>
+                </div>
+                
+                <button type="button">Enviar</button>
+                <button type="button">Limpiar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
