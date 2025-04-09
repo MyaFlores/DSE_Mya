@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Pestañas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+    <script defer src="/index.js"></script>
+
+</head>
+<body>
+    <div class="container tab-container">
+        <div class="tabs">
+            <div class="tab active" data-tab="informacion">Información</div>
+            <div class="tab" data-tab="archivos">Archivos</div>
+            <div class="tab" data-tab="configuracion">Configuración</div>
+        </div>
+
+        <div class="tab-content active" id="informacion">
+            <h3>Información General</h3>
+            <p>Este formulario permite gestionar archivos mediante un sistema de pestañas.</p>
+        </div>
+
+        <div class="tab-content" id="archivos">
+            <h3>Gestión de Archivos</h3>
+            <div class="file-actions">
+                <button id="btnSeleccionar" class="btn btn-primary">Seleccionar Archivo</button>
+                <button id="btnGuardar" class="btn btn-success">Guardar Archivo</button>
+            </div>
+            
+            <input type="file" id="fileInput" class="hidden">
+            
+            <div id="fileInfo" class="file-info hidden">
+                <h5>Archivo seleccionado:</h5>
+                <p id="fileName"></p>
+                <p id="fileSize"></p>
+                <p id="fileType"></p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="configuracion">
+            <h3>Configuración</h3>
+            <p>Opciones de configuración del sistema.</p>
+        </div>
+    </div>
+
+</body>
+</html>
